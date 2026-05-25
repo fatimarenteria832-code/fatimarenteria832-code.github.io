@@ -1,0 +1,1220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'work sans' ;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+body {
+    background-color: black;
+    background: linear-gradient(180deg, 
+        #000000 0%, 
+        #050508 20%, 
+        #080505 40%, 
+        #000000 60%, 
+        #050508 80%, 
+        #000000 100%
+    );
+    background-attachment: scroll;
+    color: white;
+}
+
+header{
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: rgb(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.nav-links{
+    display: flex;
+    gap: 5rem;
+}
+li a{
+    position: relative;
+    color: white;
+    font-weight: 300;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 30px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right,#ffaf00, #ffaf00);
+
+}
+li a:hover::before{
+   width: 100%;
+}
+.CV{
+    padding: 0.8rem 1.5rem;
+    border-radius: 10rem;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right,#ffaf00, #ffaf00);
+
+}
+.CV:hover{
+        background: linear-gradient(to right,#aad7ff, #aad7ff);
+    transform: scale(1.03);
+
+}
+#menu-icon{
+    font-size: 2rem;
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.perfil .perfil-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.img-box {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    padding: 8px; /* Este es el grosor del borde */
+    background: conic-gradient(from 0deg, #ffaf00, #a0b4ff, #ffaf00, #a0b4ff, #ffaf00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate-border 8s linear infinite, profile-glow 4s infinite ease-in-out;
+}
+
+.perfil img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: counter-rotate 8s linear infinite;
+}
+
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes profile-glow {
+    0%, 100% { box-shadow: 0 0 25px rgba(255, 175, 0, 0.4); }
+    50% { box-shadow: 0 0 70px rgba(255, 175, 0, 0.7), 0 0 40px rgba(160, 180, 255, 0.3); }
+}
+.info-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.info-box h3{
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.info-box h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.info-box span{
+            background: linear-gradient(to right,#ffaf00, #ffaf00);
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+
+}
+
+.btn-group{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn{
+    display: inline-block;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
+
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.socials{
+    display: flex;
+    gap: 2rem;
+}
+
+.socials i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.socials i:hover{
+    transform: scale(1.2);
+}
+
+.section-title{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.experiencia-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9rem;
+}
+
+.experiencia img{
+    width: 14vw;
+    border-radius: 3rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+
+}
+
+.grid-card{
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #0a0a0a;
+}
+
+.grid-card:hover{
+    transform: scale(1.02);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.grid-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+    opacity: 0; /* Imagen invisible por defecto */
+}
+
+.grid-card:hover::before {
+    filter: blur(8px);
+    transform: scale(1.1);
+    opacity: 0.6; /* Se nota más la imagen al hacer hover */
+}
+
+.grid-card i{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-card span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(to right,#ffaf00, #ffaf00);
+    background-clip: text;
+    color: transparent;
+}   
+
+::-webkit-scrollbar{
+    width: 9px;
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: aliceblue;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#a0b4ff, #a0b4ff);
+}
+
+.proyectos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 2rem;
+}
+
+.proyectos-card{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 1.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.05); /* Un fondo sutil para que resalte el borde blanco */
+    animation: glow-pulse 3s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 175, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(255, 175, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 175, 0, 0.3);
+    }
+}
+
+.proyectos-card:hover{
+    background-color: black;
+    color: white;
+    transform: translateY(-10px)scale(1.02);
+    box-shadow: 0 0 70px rgba(255, 175, 0, 0.8); /* Destello más potente al interactuar */
+    animation-play-state: paused; /* Pausa la pulsación para dejar el brillo fijo al máximo */
+}
+
+.proyectos-card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.proyectos-card .btn-group {
+    margin-top: auto;
+}
+
+.proyectos-card:hover .btn{
+    border: 2px solid white;
+    color: white;
+}
+
+.proyectos-card:hover .btn:hover{
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}
+.proyectos-card h3{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.input-box input{
+    position: relative;
+    border-radius: 3rem;
+    border: 2px solid white;
+    padding: 2rem 8rem;
+    font-size: 3rem;
+
+}
+
+.input-box :-ms-input-placeholder{
+    font-size: 3rem;
+}
+
+.input{
+    position: relative;
+}
+
+.input i{
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    left: 10px;
+    transform: translate(50%,-50%);
+
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+footer ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+footer ul li a{
+    color: white;
+    font-weight: 600;
+}
+
+.copyright{
+    font-size: 300;
+    margin-top: 2rem;
+}
+
+
+@media(max-width:1280px){
+    header{
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+    .perfil .perfil-container{
+        gap: 3rem;
+    }
+    .experiencia-info{
+        flex-direction: column;
+    }
+    .input-box input{
+        padding: 2rem 5rem;
+        font-size: 2.5rem;
+    }
+    .input input::placeholder{
+        font-size: 2.5rem;
+    }
+    .input-box i{
+        font-size: 2.5rem;
+    }
+
+}
+
+@media(max-width:768px){
+    header{
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+    header .logo{
+        font-size: 1rem;
+    }
+    header .visit-btn{
+        display: none;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+
+    .input-box input{
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+    .input-box input::placeholder{
+        font-size: 1.5rem;
+    }
+    .input-box i{
+        display: none;
+
+    }
+
+    .grid, .wigmov-grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .experiencia-info img{
+        width: 70vw;
+
+    }
+    }
+    
+
+@media(max-width:600px){
+    header #menu-icon{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 9);
+        border-radius: 3rem;
+        display: none;
+    }
+    .nav-links li{
+        margin-top: 1.5rem;
+        padding: 1rem;
+    
+    }
+    .nav-links.active{
+        display: block;
+    }
+    header{
+        padding: 1rem 5rem;
+        gap: 8rem;
+    }
+    header .logo{
+        font-size: 1.5rem;
+    }
+    .perfil-container img{
+        width: 80vw;
+    }
+    .input-box input{
+        padding: 0.5rem 3rem;
+        width: 80%;
+        font-size: 1.5rem;
+    }
+    .input-box input::placeholder{
+        font-size: 1.5rem;
+    }
+    footer ul{
+        gap: 1rem;
+    }
+}
+
+/* Solo quitamos el padding lateral para que el carrusel sea de ancho completo */
+#carrusel, 
+#carrusel-videos,
+#galeria-detallada,
+#carrusel-wig {
+    padding: 0;
+    min-height: auto; /* Evita que la sección fuerce un alto de 100vh innecesario */
+}
+
+#galeria-detallada {
+    padding-bottom: 7rem; /* Espacio para el comentario flotante */
+    min-height: auto;
+}
+
+.carrusel-container {
+    overflow: hidden;
+    width: 100%;
+    background: black;
+    padding: 40px 0;
+    cursor: grab;
+    user-select: none; /* Evita que se seleccione el contenido al arrastrar */
+}
+
+#carrusel .carrusel-container,
+#carrusel-videos .carrusel-container {
+    overflow-x: auto;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    scroll-behavior: auto; /* Desactivamos el smooth para que el arrastre sea instantáneo */
+}
+
+#carrusel .carrusel-container::-webkit-scrollbar,
+#carrusel-videos .carrusel-container::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome/Safari */
+}
+
+.wrapper {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    /* Eliminamos la animación CSS para manejarla con JS */
+    animation: none;
+}
+
+.wrapper img {
+    height: 500px; /* Controla qué tan grande quieres que se vea el carrusel */
+    width: auto;   /* Mantiene la proporción real de la foto */
+    object-fit: contain; /* Asegura que no se corte ninguna parte */
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.wrapper:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes animate {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.wrapper img:hover{
+    transform: scale(1.1);
+}
+
+/* Ajuste para el título dentro del carrusel de videos */
+#carrusel .section-title,
+#carrusel-videos .section-title,
+#galeria-detallada .section-title {
+    padding-top: 0; /* Eliminamos el espacio superior para que la sección suba totalmente */
+}
+
+/* Carrusel de Videos */
+.wrapper-videos {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    /* Eliminamos la animación CSS para manejarla con JS y permitir el arrastre */
+    animation: none; 
+}
+
+.wrapper-videos video {
+    height: 350px;
+    width: auto;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wrapper-videos:hover {
+    animation-play-state: paused;
+}
+
+/* Estructura del Carrusel con Flechas */
+.carousel-nav-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffaf00;
+    border: 2px solid #ffaf00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.nav-btn:hover {
+    background: #ffaf00;
+    color: black;
+    box-shadow: 0 0 15px #ffaf00;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    height: 450px; /* Reducimos ligeramente la altura */
+    gap: 20px;
+    overflow-x: hidden; /* Ocultamos el scroll para manejarlo con JS */
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.container li{
+    position: relative;
+    flex: 0 0 350px; /* Tamaño fijo para cada tarjeta en el carrusel */
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4), -2px -5px 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+}
+
+.container li img{
+    display: block;
+    width: 100%; /* Ancho completo mientras está cerrado */
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.container li,
+.container li img
+{
+    transition: 0.3s;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.container li .content {
+    transition: 1.5s ease;
+}
+
+.container span{
+    text-align: center;
+    width: 75%;
+}
+
+.container h2{
+    font-weight: 400;
+    font-size: 20px;
+    -height: 1.4;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    color: white;
+}
+
+.container p{
+    color: white;
+    font-size: 10px;
+    width: 100%;
+}
+
+.container li .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(
+        0deg, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        transparent 100%
+    );
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container:hover{
+    gap: 0;
+}
+
+.container li:hover {
+    flex: 0 0 550px; /* Expansión moderada para no invadir demasiado espacio */
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(255, 175, 0, 0.3); /* Un toque de brillo naranja al resaltar */
+}
+
+.container li:hover .content{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container li:hover img {
+    object-fit: contain; /* Revela la imagen completa sin recortes */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para los espacios laterales */
+}
+
+.container li:hover span{
+     scale: 1;
+     opacity: 1;
+     visibility: visible;
+}
+
+/* Fondo desenfocado limitado solo al área del contenedor de fotos */
+#galeria-detallada .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('IMG 2/R1.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.3); /* Desenfoque y oscurecimiento para que las fotos resalten */
+    transform: scale(1.1); /* Evita que se vean bordes blancos por el desenfoque */
+    z-index: -1;
+}
+
+#galeria-detallada .container {
+    overflow: hidden; /* Importante para que el desenfoque no se salga del recuadro */
+    border-radius: 0; /* Eliminamos el radio para que abarque todo el ancho de la pantalla */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+#wigmov-identity {
+    min-height: auto; /* Permite que la altura se ajuste al contenido */
+    padding: 8rem 5%; /* Reducimos el padding lateral para que las imágenes crezcan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#wigmov-identity .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.3) blur(8px);
+}
+
+.anclas-decoracion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Por encima del video, debajo de las imágenes */
+}
+
+.ancla {
+    position: absolute;
+    width: 60px; /* Tamaño base */
+    opacity: 0.4;
+    filter: drop-shadow(0 0 10px rgba(255, 175, 0, 0.4));
+    animation: floating-ancla 6s infinite ease-in-out;
+}
+
+/* Posiciones "aleatorias" para las anclas */
+.icon-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.icon-2 { top: 20%; left: 85%; animation-delay: 1s; }
+.icon-3 { top: 70%; left: 10%; animation-delay: 2s; }
+.icon-4 { top: 85%; left: 90%; animation-delay: 1.5s; }
+.icon-5 { top: 40%; left: 45%; animation-delay: 3s; opacity: 0.2; width: 40px; }
+.icon-6 { top: 15%; left: 50%; animation-delay: 0.5s; width: 30px; }
+.icon-7 { top: 60%; left: 80%; animation-delay: 2.5s; width: 80px; }
+.icon-8 { top: 50%; left: 5%; animation-delay: 4s; }
+.icon-9 { top: 30%; left: 20%; animation-delay: 1.2s; width: 45px; opacity: 0.3; }
+.icon-10 { top: 80%; left: 30%; animation-delay: 2.8s; width: 35px; opacity: 0.15; }
+.icon-11 { top: 5%; left: 70%; animation-delay: 0.8s; width: 55px; opacity: 0.25; }
+.icon-12 { top: 45%; left: 75%; animation-delay: 3.5s; width: 25px; opacity: 0.45; }
+.icon-13 { top: 90%; left: 50%; animation-delay: 1.9s; width: 50px; opacity: 0.2; }
+.icon-14 { top: 25%; left: 40%; animation-delay: 0.3s; width: 40px; opacity: 0.35; }
+.icon-15 { top: 65%; left: 95%; animation-delay: 4.5s; width: 30px; opacity: 0.1; }
+
+@keyframes floating-ancla {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(15deg); }
+}
+
+.wigmov-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem; /* Reducimos un poco el espacio entre ellas para ganar tamaño */
+    width: 100%;
+    align-items: center; /* Alineación vertical perfecta */
+}
+
+.wigmov-grid img {
+    width: 100%;
+    height: 300px; /* Altura fija para que todas se vean del mismo tamaño */
+    object-fit: contain; /* Muestra la imagen completa sin deformar ni recortar */
+    border-radius: 1.5rem;
+    transition: 0.4s ease-in-out, filter 0.5s ease;
+    animation: floating 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.wigmov-grid img:nth-child(1) { 
+    animation: intro-ancla 1s cubic-bezier(0.4, 0, 0.2, 1) forwards, floating 2s ease-in-out infinite 1s;
+    filter: blur(20px);
+}
+.wigmov-grid img:nth-child(2) { animation-delay: 1s; }
+.wigmov-grid img:nth-child(3) { animation-delay: 2s; }
+
+
+.wigmov-grid img:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 0 50px rgba(255, 175, 0, 0.5);
+    filter: blur(0);
+    animation-play-state: paused;
+}
+
+/* Animación de entrada para el Ancla */
+@keyframes intro-ancla {
+    0% {
+        transform: scale(8) translateX(30%); /* Escala gigante para cubrir la sección */
+        filter: blur(20px);
+        z-index: 100;
+    }
+    100% {
+        transform: scale(1) translateX(0);
+        filter: blur(0);
+        z-index: 1;
+    }
+}
+
+/* Sección Stream Pack con fondo animado */
+.stream-pack {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stream-pack::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('ojos.png') no-repeat center center/cover;
+    filter: blur(10px) brightness(0.8);
+    transform: scale(1.1); /* Evita bordes blancos por el desenfoque */
+    transform: scale(1.3, 1.1); /* Estirado un poco más horizontalmente */
+    z-index: -1;
+    pointer-events: none;
+    animation: ironman-glow 4s infinite alternate ease-in-out;
+}
+
+@keyframes ironman-glow {
+    0% { filter: blur(10px) brightness(0.5); opacity: 0.7; }
+    100% { filter: blur(10px) brightness(1.2); opacity: 1; }
+}
+
+.stream-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100%;
+}
+
+.stream-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stream-grid video {
+    width: 100%;
+    border-radius: 2rem;
+    transition: 0.3s ease;
+}
+
+.stream-item p {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.stream-grid video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+}
+
+/* Sección Cuento Infantil */
+.cuento-infantil {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem 12% 7rem 12%;
+    min-height: auto;
+}
+
+.cuento-infantil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fabrica9.jpeg') no-repeat center center/cover;
+    filter: blur(10px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.cuento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.cuento-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cuento-grid video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    transition: 0.4s ease-in-out;
+    border: 2px solid rgba(160, 180, 255, 0.1);
+}
+
+.cuento-item p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #a0b4ff;
+    text-align: center;
+}
+
+.cuento-grid video:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(160, 180, 255, 0.3);
+    border-color: #a0b4ff;
+}
+
+.cambio90-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Distribución igualitaria para que las 3 estén alineadas */
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+    justify-items: center; /* Centra los elementos horizontalmente */
+    padding: 0; /* Eliminamos el padding extra de la cuadrícula */
+}
+
+#wigmov-identity-2 {
+    padding-bottom: 7rem; /* Ajustado para dar espacio al comentario flotante sin separar demasiado las secciones */
+    min-height: auto;    /* Evita que la sección ocupe toda la pantalla */
+}
+
+#wigmov-identity-2 .section-title {
+    margin-bottom: 1rem; /* Acerca el título a las imágenes */
+}
+
+.cambio90-grid img {
+    width: 100%;
+    height: 300px; /* Altura uniforme para mejorar la alineación visual */
+    object-fit: contain; /* Mantiene la proporcionalidad */
+    border-radius: 1.5rem;
+    transition: 0.4s ease-in-out;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.cambio90-grid img:hover {
+    transform: translateY(-10px) scale(1.05); /* Animación suave al pasar el ratón */
+    box-shadow: none;
+}
+
+.cambio90-grid img:nth-child(2) { animation-delay: 0.7s; }
+.cambio90-grid img:nth-child(3) { animation-delay: 1.4s; }
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Estilos específicos para period2.png */
+.cambio90-grid .period2-highlight {
+    height: 300px; /* Igualamos con el resto de las imágenes */
+    width: 100%; /* Rellena su columna */
+    object-fit: contain;
+}
+
+.cambio90-grid .period2-highlight:hover {
+    transform: translateY(-15px) scale(1.08); /* Animación más pronunciada para la imagen destacada */
+    box-shadow: none;
+}
+
+/* Ajustes responsivos para la nueva cuadrícula */
+@media(max-width: 768px) {
+    .cambio90-grid {
+        grid-template-columns: 1fr; /* Apila las imágenes en pantallas pequeñas */
+    }
+    .cambio90-grid .period2-highlight {
+        grid-column: auto; /* Restablece la colocación de la columna */
+        height: auto;
+    }
+    .cambio90-grid img {
+        height: auto;
+    }
+}
+
+.cuento-caption {
+    font-size: 1.8rem;
+    color: #a0b4ff;
+    margin-top: -2rem;
+    margin-bottom: 4rem;
+    text-align: center; /* Asegura que el caption también esté centrado */
+}
+
+/* Responsive para el Cuento Infantil */
+@media(max-width: 768px) {
+    .cuento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para el Modal de Video - Tamaño Reducido */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    position: relative;
+    width: 50%; /* Ocupará el 50% del ancho de la pantalla */
+    max-width: 450px; /* Tamaño máximo pequeño y controlado */
+}
+
+.modal-container video {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(255, 175, 0, 0.4);
+}
+
+.close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #ffaf00;
+}
+
+/* Comentario flotante para la sección Wigmov */
+.wigmov-comment {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.03); /* Fondo muy transparente */
+    backdrop-filter: blur(12px); /* Efecto de desenfoque */
+    padding: 0.7rem 2.5rem;
+    border-radius: 5rem;
+    border: 1px solid rgba(255, 175, 0, 0.2);
+    max-width: 850px;
+    width: 90%;
+    z-index: 10;
+    animation: floating-comment 5s ease-in-out infinite;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.wigmov-comment p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    margin: 0;
+    font-style: italic;
+    text-align: center;
+}
+
+@keyframes floating-comment {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-12px); }
+}
+
+/* Ajuste responsivo para que no tape las imágenes en pantallas pequeñas */
+@media(max-width: 1024px) {
+    .wigmov-comment {
+        position: relative;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 3rem;
+        max-width: 100%;
+        width: 100%;
+        animation: none;
+    }
+}
