@@ -15,7 +15,7 @@ if (btnNext && btnPrev && container) {
     });
 }
 
-// --- Lógica para el Menú Hamburguesa ---
+// --- Lógica para el Menú Hamburguesa Móvil ---
 const menuIcon = document.querySelector('#menu-icon');
 const navLinks = document.querySelector('.nav-links');
 
@@ -23,6 +23,13 @@ if (menuIcon && navLinks) {
     menuIcon.onclick = () => {
         navLinks.classList.toggle('active');
     };
+
+    // Cerrar el menú desplegable al tocar cualquier opción en móvil
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 }
 
 // --- Lógica para el Carrusel de Fotos (Drag to Scroll + Auto-scroll) ---
@@ -234,3 +241,31 @@ if (submitBtn && contactInput) {
         contactInput.value = "";
     });
 }
+
+// --- Lógica de Navegación de Carrusel para Tarjetas de Marca ---
+function scrollBrandCarousel(carouselId, direction) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    const track = container.querySelector('.carousel-track');
+    const slides = container.querySelectorAll('.carousel-slide');
+    const dots = container.querySelectorAll('.dot');
+    if (!track || slides.length === 0) return;
+
+    const slideWidth = slides[0].offsetWidth;
+    const currentScroll = track.scrollLeft;
+    const targetScroll = currentScroll + direction * slideWidth;
+
+    track.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+        const newIndex = Math.round(track.scrollLeft / slideWidth);
+        dots.forEach((dot, idx) => {
+            if (idx === newIndex) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    }, 350);
+}
+
