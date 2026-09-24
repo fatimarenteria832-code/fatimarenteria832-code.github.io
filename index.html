@@ -59,6 +59,7 @@
     </section>
 
     <section id="experiencia" class="experiencia">
+        <video class="bg-section-video" src="F1.mp4" autoplay muted loop playsinline></video>
         <h2 class="section-title">Experiencia</h2>
 
         <div class="experiencia-info">
@@ -88,6 +89,7 @@
     </section>
 
     <section id="proyectos" class="proyectos">
+        <video class="bg-section-video" src="F5.mp4" autoplay muted loop playsinline></video>
         <h2 class="section-title">Proyectos Destacados</h2>
 
         <div class="proyectos-grid">
@@ -112,10 +114,13 @@
     </section>
 
     <section id="carrusel" class="carrusel">
+        <video class="bg-section-video" src="F2.mp4" autoplay muted loop playsinline></video>
         <h2 class="section-title">Diseños</h2>
         <p class="carousel-hint"><i class="fa-solid fa-hand-pointer"></i> Haz clic y arrastra para explorar más rápido</p>
         <div class="carrusel-container">
             <div class="wrapper">
+                <img src="GH1.jpg" alt="Diseño GH1">
+                <img src="GH2.png" alt="Diseño GH2">
                 <img src="A2.jpg" alt="Feria">
                 <img src="666d.jpg" alt="Wigmov">
                 <img src="o2.jpg" alt="Wigmov">
@@ -123,12 +128,13 @@
                 <img src="o1.jpg" alt="Wigmov 2">
                 <img src="w1.jpg" alt="Playera">
                 <img src="veterinaria.jpg" alt="Veterinaria">
-                <img src="03.jpg" alt="Diseño 3">
                 <img src="w2.jpg" alt="Diseño W2">
                 <img src="w3.jpg" alt="Diseño W3">
                 <img src="padre.jpg" alt="Diseño Padre">
                 <img src="menu.jpg" alt="Menú">
 
+                <img src="GH1.jpg" aria-hidden="true">
+                <img src="GH2.png" aria-hidden="true">
                 <img src="A2.jpg" aria-hidden="true">
                 <img src="666d.jpg" aria-hidden="true">
                 <img src="o2.jpg" aria-hidden="true">
@@ -136,7 +142,6 @@
                 <img src="o1.jpg" aria-hidden="true">
                 <img src="w1.jpg" aria-hidden="true">
                 <img src="veterinaria.jpg" aria-hidden="true">
-                <img src="03.jpg" aria-hidden="true">
                 <img src="w2.jpg" aria-hidden="true">
                 <img src="w3.jpg" aria-hidden="true">
                 <img src="padre.jpg" aria-hidden="true">
@@ -312,27 +317,70 @@
     </section>
 
     <section id="carrusel-videos" class="carrusel">
+        <video class="bg-section-video" src="banner jimmy.mp4" autoplay muted loop playsinline></video>
         <h2 class="section-title">Videos animados</h2>
         <p class="carousel-hint"><i class="fa-solid fa-hand-pointer"></i> Haz clic y arrastra para explorar más rápido</p>
         <div class="carrusel-container">
             <div class="wrapper-videos">
                 <!-- Videos originales -->
-                <video src="F1.mp4" autoplay muted loop playsinline></video>
-                <video src="F2.mp4" autoplay muted loop playsinline></video>
-                <video src="F3.mp4" autoplay muted loop playsinline></video>
-                <video src="F4.mp4" autoplay muted loop playsinline></video>
-                <video src="F5.mp4" autoplay muted loop playsinline></video>
-                <video src="F6.mp4" autoplay muted loop playsinline></video>
-                <video src="banner jimmy.mp4" autoplay muted loop playsinline></video>
+                <div class="video-item">
+                    <video src="F1.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F2.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F3.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F4.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F5.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F6.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="banner jimmy.mp4" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
                 
                 <!-- Duplicados para el efecto infinito -->
-                <video src="F1.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="F2.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="F3.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="F4.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="F5.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="F6.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
-                <video src="banner jimmy.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                <div class="video-item">
+                    <video src="F1.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F2.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F3.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F4.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F5.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="F6.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="video-item">
+                    <video src="banner jimmy.mp4" aria-hidden="true" autoplay muted loop playsinline></video>
+                    <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
             </div>
         </div>
     </section>
@@ -343,12 +391,15 @@
         <div class="cuento-grid">
             <div class="cuento-item">
                 <video src="fabrica1.mp4" autoplay muted loop playsinline></video>
+                <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
             </div>
             <div class="cuento-item">
                 <video src="fabrica2.mp4" autoplay muted loop playsinline></video>
+                <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
             </div>
             <div class="cuento-item">
                 <video src="fabrica3.mp4" autoplay muted loop playsinline></video>
+                <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
             </div>
         </div>
 
@@ -358,24 +409,12 @@
     </section>
 
     <section id="stream-pack" class="stream-pack">
-        <div class="twitch-decoracion">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-1">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-2">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-3">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-4">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-5">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-6">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-7">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-8">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-9">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-10">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-11">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-12">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-13">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-14">
-            <img src="twitch.png" alt="" class="twitch-icon twitch-15">
-        </div>
+    
         <h2 class="section-title">Diseño de Stream Pack</h2>
+        <div class="stream-featured-container">
+            <video src="todo9.mp4" autoplay muted loop playsinline class="stream-featured-video"></video>
+            <button class="sound-toggle-btn" aria-label="Activar o desactivar sonido" title="Activar/Desactivar sonido"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
         <div class="stream-grid">
             <div class="stream-item">
                 <video src="marco ion man.mp4" autoplay muted loop playsinline></video>
@@ -393,6 +432,7 @@
     </section>
 
     <section class="contacto" id="contacto">
+        <video class="bg-section-video" src="F3.mp4" autoplay muted loop playsinline></video>
         <div class="input-box">
             <h2 class="section-title">Contáctame</h2>
             <div class="input">
