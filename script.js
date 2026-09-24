@@ -115,6 +115,7 @@ if (videoSlider && videoWrapper) {
     let scrollLeft;
     let autoScrollSpeed = 0.8; // Velocidad del movimiento automático
     let requestID;
+    let isDragging = false;
 
     // Función para el movimiento automático infinito
     const stepVideo = () => {
@@ -138,8 +139,8 @@ if (videoSlider && videoWrapper) {
 
     // Eventos de Mouse para arrastrar
     videoSlider.addEventListener('mousedown', (e) => {
-        e.preventDefault(); // Evita interferencias al hacer clic
         isDown = true;
+        isDragging = false;
         videoSlider.style.cursor = 'grabbing';
         startX = e.pageX - videoSlider.offsetLeft;
         scrollLeft = videoSlider.scrollLeft;
@@ -157,10 +158,12 @@ if (videoSlider && videoWrapper) {
 
     videoSlider.addEventListener('mousemove', (e) => {
         if (!isDown) return;
-        e.preventDefault();
         const x = e.pageX - videoSlider.offsetLeft;
-        // Multiplicamos por 2 para que el desplazamiento sea más sensible
         const walk = (x - startX) * 2; 
+        if (Math.abs(walk) > 5) {
+            isDragging = true;
+            e.preventDefault();
+        }
         videoSlider.scrollLeft = scrollLeft - walk;
     });
 
@@ -267,5 +270,77 @@ function scrollBrandCarousel(carouselId, direction) {
             else dot.classList.remove('active');
         });
     }, 350);
+}
+
+// --- Lógica para Botones de Sonido en Videos ---
+let soundTogglesInitialized = false;
+
+function setupVideoSoundToggles() {
+    if (soundTogglesInitialized) return;
+    soundTogglesInitialized = true;
+
+    const soundButtons = document.querySelectorAll('.sound-toggle-btn');
+
+    soundButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            const container = btn.closest('.video-item, .cuento-item, .stream-item, .stream-featured-container');
+            const video = container ? container.querySelector('video') : null;
+
+            if (!video) return;
+
+            if (video.muted) {
+                // Silenciar todos los demás vídeos para evitar solapamiento de audio
+                document.querySelectorAll('video').forEach(v => {
+                    v.muted = true;
+                });
+                document.querySelectorAll('.sound-toggle-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+                    b.setAttribute('title', 'Activar sonido');
+                });
+
+                // Activar sonido en el vídeo seleccionado
+                video.muted = false;
+                video.volume = 1.0;
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => console.log("Play error:", err));
+                }
+
+                btn.classList.add('active');
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                btn.setAttribute('title', 'Desactivar sonido');
+            } else {
+                // Silenciar el vídeo actual
+                video.muted = true;
+                btn.classList.remove('active');
+                btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+                btn.setAttribute('title', 'Activar sonido');
+            }
+        });
+    });
+
+    // Permitir hacer clic directo en el video para alternar el sonido (solo si tiene botón de sonido)
+    document.querySelectorAll('.video-item video, .cuento-item video, .stream-item video, .stream-featured-video').forEach(video => {
+        const container = video.closest('.video-item, .cuento-item, .stream-item, .stream-featured-container');
+        const btn = container ? container.querySelector('.sound-toggle-btn') : null;
+        if (btn) {
+            video.style.cursor = 'pointer';
+            video.addEventListener('click', (e) => {
+                e.stopPropagation();
+                btn.click();
+            });
+        } else {
+            video.style.cursor = 'default';
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupVideoSoundToggles);
+} else {
+    setupVideoSoundToggles();
 }
 
